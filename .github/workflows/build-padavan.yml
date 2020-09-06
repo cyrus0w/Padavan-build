@@ -40,8 +40,8 @@ jobs:
       env:
         TNAME: PSG1218_wf
       run: |
-        if [ -f public/PSG1218_hzn.config ] ; then
-        mv -f public/PSG1218_hzn.config /opt/rt-n56u/trunk/configs/templates/PSG1218_hzn.config
+        if [ -f public/PSG1218_wf.config ] ; then
+        mv -f public/PSG1218_wf.config /opt/rt-n56u/trunk/configs/templates/PSG1218_wf.config
         echo "config file copy success"
         else
         exit 2

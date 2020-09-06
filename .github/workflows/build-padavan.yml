@@ -38,8 +38,14 @@ jobs:
         mkdir -p /opt/images/
     - name: Build Firmware
       env:
-        TNAME: K2P-5.0
+        TNAME: PSG1218_wf
       run: |
+        if [ -f public/PSG1218_hzn.config ] ; then
+        mv -f public/PSG1218_hzn.config /opt/rt-n56u/trunk/configs/templates/PSG1218_hzn.config
+        echo "config file copy success"
+        else
+        exit 2
+        fi
         cd /opt/rt-n56u/trunk
         if [ ! -f configs/templates/$TNAME.config ] ; then
         echo "configs/templates/$TNAME.config not found "
